@@ -38,6 +38,6 @@ ADD run.sh /opt/run.sh
 RUN chmod -v +x /opt/run.sh
 RUN export $(grep -v "#" /etc/sysconfig/grafana-server | cut -d= -f1)
 
-ENV POWERWALL_LOCATION="lat=36.2452052&lon=-113.7292593"
+##ENV POWERWALL_LOCATION="lat=36.2452052&lon=-113.7292593"
 
 CMD ["/opt/run.sh"]
