@@ -21,19 +21,23 @@ set -a; . /etc/sysconfig/grafana-server; set +a
 cd /usr/share/grafana
 
 # Preconfigure grafana with required plugins and dashboards
-mkdir -p /var/lib/grafana/dashboards
+#mkdir -p /var/lib/grafana/dashboards
 grafana-cli plugins install grafana-piechart-panel
-curl ${GRAFANA_DASHBOARD_URL} > /var/lib/grafana/dashboards/grafana_powerwall.json
+#curl https://raw.githubusercontent.com/cdelargy/docker-powerwall-dashboard/master/graf_dash.json > /var/lib/grafana/dashboards/grafana_powerwall.json
 chown -R grafana:grafana /var/lib/grafana
 
 /usr/sbin/grafana-server \
-	--config=${CONF_FILE}                                   \
+	--config=/var/lib/grafana/config/custom.ini             \
 	--pidfile=${PID_FILE_DIR}/grafana-server.pid            \
 	--packaging=rpm                                         \
 	cfg:default.paths.logs=${LOG_DIR}                       \
 	cfg:default.paths.data=${DATA_DIR}                      \
 	cfg:default.paths.plugins=${PLUGINS_DIR}                \
 	cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}
+
+# edit grafana ini in-place to enable anonymous access
+#sed -i '306s/;enabled = false/enabled = true/' /etc/grafana/grafana.ini
+#note: this doesn't seem to work until after container start
 
 while sleep 60; do
   ps aux |grep influxd |grep -q -v grep

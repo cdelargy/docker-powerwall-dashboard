@@ -10,7 +10,7 @@ datasources:
   url: http://localhost:8086
   password: ''
   user: ''
-  database: PowerwallData
+  database: home
   basicAuth: false
   basicAuthUser: ''
   basicAuthPassword: ''

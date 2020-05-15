@@ -81,7 +81,7 @@
             [
               {
                 "params": [
-                  "load_instant_power"
+                  "load"
                 ],
                 "type": "field"
               }
@@ -167,7 +167,7 @@
             [
               {
                 "params": [
-                  "site_instant_power"
+                  "site"
                 ],
                 "type": "field"
               }
@@ -263,7 +263,7 @@
             [
               {
                 "params": [
-                  "solar_instant_power"
+                  "solar"
                 ],
                 "type": "field"
               }
@@ -428,7 +428,7 @@
             [
               {
                 "params": [
-                  "load_instant_power"
+                  "load"
                 ],
                 "type": "field"
               },
@@ -575,7 +575,7 @@
             [
               {
                 "params": [
-                  "battery_instant_power"
+                  "battery"
                 ],
                 "type": "field"
               },
@@ -717,7 +717,7 @@
             [
               {
                 "params": [
-                  "solar_instant_power"
+                  "solar"
                 ],
                 "type": "field"
               },
@@ -988,7 +988,7 @@
             [
               {
                 "params": [
-                  "site_instant_power"
+                  "site"
                 ],
                 "type": "field"
               },
@@ -1135,7 +1135,7 @@
             [
               {
                 "params": [
-                  "load_instant_power"
+                  "load"
                 ],
                 "type": "field"
               },
@@ -1257,7 +1257,7 @@
             [
               {
                 "params": [
-                  "site_instant_power"
+                  "site"
                 ],
                 "type": "field"
               },
